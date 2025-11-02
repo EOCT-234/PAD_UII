@@ -1,0 +1,199 @@
+---
+title: "Analisis"
+author: "GRUPO_2"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: inline
+---
+
+# Integrantes:
+
+Campos Troyes, Edgar Orlando
+
+Delgado Gomez, Mark Anthony
+
+Galoc Valqui, Hermes
+
+Maldonado Ticliahuanca, Helkin
+
+Ortiz Zavaleta, Lesli
+
+Tomapasca Lopez, Frank
+
+# librerias:
+
+```{r}
+library(googlesheets4)
+library(ggplot2)
+library(emmeans)
+library(dplyr)
+library(readxl)
+library(emmeans)
+library(multcomp)
+library(tidyr)
+library(multcompView)
+library(car)
+library(ggfortify)
+library(FactoMineR)
+library(factoextra)
+library(cowplot)
+```
+
+# Lamada de datos:
+
+```{r}
+url <- "https://docs.google.com/spreadsheets/d/1lSjTUOkyfU72n_sk_I3fkAJPH_pEQktlG9gBFuTr8AE/edit?usp=sharing"
+
+gs <- url %>% 
+  as_sheets_id()
+
+papa <- gs %>%
+  range_read("fb")
+
+str(papa)
+```
+
+# Modelo lineal para cada variable y anova de cada una:
+
+-   Para la variable: "Alt_plant_45_días"
+
+$$ Alt_plant_45_día} = \mu+ BLOQUE + REPETICIÓN + e $$
+
+# Anova para "Alt_plant_45_días"
+
+```{r}
+anova_45 <- aov(Alt_plant_45_días ~ BLOQUE + REPETICION, data = papa)
+summary(anova_45)
+```
+
+-   Para la variable: "Alt_plant_90_días" 
+$$ Alt_plant_90_días} = \mu + BLOQUE + REPETICION + e $$ 
+
+# Anova para "Alt_plant_90_días"
+
+```{r}
+anova_90 <- aov(Alt_plant_90_días ~ BLOQUE + REPETICION, data = papa)
+summary(anova_90)
+```
+
+-   Para la variable: "Número_tubérculos_por_planta" 
+$$ Número_tubérculos_por_planta} = \mu + BLOQUE + REPETICION + e $$
+
+# Anova para "Número_tubérculos_por_planta"
+
+```{r}
+anova_n_tub <- aov(Número_tubérculos_por_planta ~ BLOQUE + REPETICION, data = papa)
+summary(anova_n_tub)
+```
+
+-   Para la variable: "Peso_tubérculos_por_planta_kg" 
+$$ Peso_tubérculos_por_planta_kg} = \mu + BLOQUE + REPETICION + e $$
+
+# Anova para "Peso_tubérculos_por_planta_kg"
+
+```{r}
+anova_p_tub <- aov(Peso_tubérculos_por_planta_kg ~ BLOQUE + REPETICION, data = papa)
+summary(anova_p_tub)
+```
+
+# Comparación de medias para cada variable:
+# Gráfico para mejor observación:
+
+```{r}
+Datos_plot <- papa %>%
+  dplyr::select(REPETICION, Alt_plant_45_días,Alt_plant_90_días,
+         Número_tubérculos_por_planta,Peso_tubérculos_por_planta_kg)
+
+# Convertir a formato largo
+Datos_largo <- Datos_plot %>%
+  pivot_longer(cols = -REPETICION, 
+               names_to = "Variable", 
+               values_to = "Valor")
+
+# Calcular medias y error estándar por genotipo y variable
+resumen <- Datos_largo %>%
+  group_by(REPETICION, Variable) %>%
+  summarise(Media = mean(Valor, na.rm = TRUE),
+            SD = sd(Valor, na.rm = TRUE),
+            N = n(),
+            SE = SD/sqrt(N),
+            .groups = "drop")
+
+# Plot con facetas para las 4 variables
+ggplot(resumen, aes(x = REPETICION, y = Media)) +
+  geom_point(size = 3, color = "steelblue") +
+  geom_errorbar(aes(ymin = Media - SE, ymax = Media + SE), width = 0.2, color = "darkred") +
+  facet_wrap(~Variable, scales = "free_y") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(x = "REPETICION", y = "Media ± SE", title = "Comparación de medias por variable y genotipo")
+```
+# PCA
+
+## Selección de variables y variancias para cada componente
+```{r}
+
+datos_pca <- papa %>%
+  dplyr::select(Alt_plant_45_días, Alt_plant_90_días, Número_tubérculos_por_planta, Peso_tubérculos_por_planta_kg)
+pca_res <- prcomp(datos_pca, scale. = TRUE)
+summary(pca_res)
+```
+
+## Gráfico con variables empleadas y unidades experimentales combinadas:
+
+```{r}
+papa <- papa %>%
+  mutate(ID = paste0("B", BLOQUE, "R", REPETICION))
+
+autoplot(pca_res,
+         data = papa,
+         label = TRUE,
+         label.label = "ID",
+         colour = "BLOQUE",
+         loadings = TRUE,
+         loadings.label = TRUE) +
+  theme_minimal()
+
+```
+# PCA para cada variable y cada unidad experimental por separado:
+```{r}
+loadings <- as.data.frame(pca_res$rotation[, 1:2])
+loadings$variable <- rownames(loadings)
+
+# Gráfico de flechas:
+theta <- seq(0, 2*pi, length.out = 200)
+circle <- data.frame(x = cos(theta), y = sin(theta))
+
+GraficoA <- ggplot() +
+  geom_path(data = circle, aes(x = x, y = y), linetype = "dashed") +
+  geom_segment(data = loadings, aes(x = 0, y = 0, xend = PC1, yend = PC2),
+               arrow = arrow(length = unit(0.15, "cm")), color = "green") +
+  geom_text(data = loadings, aes(x = PC1, y = PC2, label = variable),
+            vjust = -0.5, color = "brown", size = 3) +
+  geom_hline(yintercept = 0) +
+  geom_vline(xintercept = 0) +
+  xlab(paste0("PC1 (", round(summary(pca_res)$importance[2,1] * 100, 2), "%)")) +
+  ylab(paste0("PC2 (", round(summary(pca_res)$importance[2,2] * 100, 2), "%)")) +
+  ggtitle("A) PCA – Círculo de correlaciones") +
+  coord_equal() +
+  theme_minimal()
+
+
+# Extraer coordenadas de los individuos "B x R":
+ind_coord <- as.data.frame(pca_res$x[, 1:2])
+ind_coord$ID <- papa$ID
+ind_coord$BLOQUE <- papa$BLOQUE
+
+GraficoB <- ggplot(ind_coord, aes(x = PC1, y = PC2, label = ID, color = as.factor(BLOQUE))) +
+  geom_point(size = 2) +
+  geom_text(vjust = -0.3, size = 2) +
+  xlab(paste0("PC1 (", round(summary(pca_res)$importance[2,1] * 100, 2), "%)")) +
+  ylab(paste0("PC2 (", round(summary(pca_res)$importance[2,2] * 100, 2), "%)")) +
+  ggtitle("B) PCA – Distribución de unidades experimentales (B x R)") +
+  theme_minimal() +
+  guides(color = guide_legend(title = "Bloque"))
+
+plot_grid(GraficoA, GraficoB, labels = c("A", "B"), ncol = 2)
+
+```
