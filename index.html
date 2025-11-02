@@ -269,15 +269,12 @@ Adjuntando el paquete: 'car'</code></pre>
   '7574265122@untrm.edu.pe'.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Auto-refreshing stale OAuth token.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
 <pre><code>✔ Reading from "Base_de_datos.".</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Range ''fb''.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(papa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(papa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [60 × 14] (S3: tbl_df/tbl/data.frame)
  $ BLOQUE                       : chr [1:60] "I" "I" "I" "I" ...
@@ -306,8 +303,8 @@ Adjuntando el paquete: 'car'</code></pre>
 <section id="anova-para-alt_plant_45_días" class="level2">
 <h2 class="anchored" data-anchor-id="anova-para-alt_plant_45_días">Anova para “Alt_plant_45_días”</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>anova_45 <span class="ot">&lt;-</span> <span class="fu">aov</span>(Alt_plant_45_días <span class="sc">~</span> BLOQUE <span class="sc">+</span> REPETICION, <span class="at">data =</span> papa)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_45)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>anova_45 <span class="ot">&lt;-</span> <span class="fu">aov</span>(Alt_plant_45_días <span class="sc">~</span> BLOQUE <span class="sc">+</span> REPETICION, <span class="at">data =</span> papa)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_45)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Df  Sum Sq  Mean Sq F value Pr(&gt;F)  
 BLOQUE       2 0.01708 0.008540   4.398 0.0168 *
@@ -325,8 +322,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="anova-para-alt_plant_90_días" class="level1">
 <h1>Anova para “Alt_plant_90_días”</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>anova_90 <span class="ot">&lt;-</span> <span class="fu">aov</span>(Alt_plant_90_días <span class="sc">~</span> BLOQUE <span class="sc">+</span> REPETICION, <span class="at">data =</span> papa)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_90)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>anova_90 <span class="ot">&lt;-</span> <span class="fu">aov</span>(Alt_plant_90_días <span class="sc">~</span> BLOQUE <span class="sc">+</span> REPETICION, <span class="at">data =</span> papa)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_90)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Df Sum Sq  Mean Sq F value Pr(&gt;F)  
 BLOQUE       2 0.0138 0.006914   1.148 0.3247  
@@ -343,8 +340,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="anova-para-número_tubérculos_por_planta" class="level2">
 <h2 class="anchored" data-anchor-id="anova-para-número_tubérculos_por_planta">Anova para “Número_tubérculos_por_planta”</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>anova_n_tub <span class="ot">&lt;-</span> <span class="fu">aov</span>(Número_tubérculos_por_planta <span class="sc">~</span> BLOQUE <span class="sc">+</span> REPETICION, <span class="at">data =</span> papa)</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_n_tub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>anova_n_tub <span class="ot">&lt;-</span> <span class="fu">aov</span>(Número_tubérculos_por_planta <span class="sc">~</span> BLOQUE <span class="sc">+</span> REPETICION, <span class="at">data =</span> papa)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_n_tub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)
 BLOQUE       2    182   90.94   0.859  0.429
@@ -360,8 +357,8 @@ Residuals   56   5930  105.89               </code></pre>
 <section id="anova-para-peso_tubérculos_por_planta_kg" class="level2">
 <h2 class="anchored" data-anchor-id="anova-para-peso_tubérculos_por_planta_kg">Anova para “Peso_tubérculos_por_planta_kg”</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>anova_p_tub <span class="ot">&lt;-</span> <span class="fu">aov</span>(Peso_tubérculos_por_planta_kg <span class="sc">~</span> BLOQUE <span class="sc">+</span> REPETICION, <span class="at">data =</span> papa)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_p_tub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>anova_p_tub <span class="ot">&lt;-</span> <span class="fu">aov</span>(Peso_tubérculos_por_planta_kg <span class="sc">~</span> BLOQUE <span class="sc">+</span> REPETICION, <span class="at">data =</span> papa)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_p_tub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)
 BLOQUE       2  0.149 0.07439   1.256  0.293
@@ -376,33 +373,33 @@ Residuals   56  3.317 0.05922               </code></pre>
 <section id="gráfico-para-mejor-observación" class="level2">
 <h2 class="anchored" data-anchor-id="gráfico-para-mejor-observación">Gráfico para mejor observación:</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>Datos_plot <span class="ot">&lt;-</span> papa <span class="sc">%&gt;%</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(REPETICION, Alt_plant_45_días,Alt_plant_90_días,</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>         Número_tubérculos_por_planta,Peso_tubérculos_por_planta_kg)</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir a formato largo</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>Datos_largo <span class="ot">&lt;-</span> Datos_plot <span class="sc">%&gt;%</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>REPETICION, </span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Variable"</span>, </span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Valor"</span>)</span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular medias y error estándar por genotipo y variable</span></span>
-<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> Datos_largo <span class="sc">%&gt;%</span></span>
-<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(REPETICION, Variable) <span class="sc">%&gt;%</span></span>
-<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Media =</span> <span class="fu">mean</span>(Valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD =</span> <span class="fu">sd</span>(Valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">N =</span> <span class="fu">n</span>(),</span>
-<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">SE =</span> SD<span class="sc">/</span><span class="fu">sqrt</span>(N),</span>
-<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
-<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot con facetas para las 4 variables</span></span>
-<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(resumen, <span class="fu">aes</span>(<span class="at">x =</span> REPETICION, <span class="at">y =</span> Media)) <span class="sc">+</span></span>
-<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Media <span class="sc">-</span> SE, <span class="at">ymax =</span> Media <span class="sc">+</span> SE), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
-<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Variable, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"REPETICION"</span>, <span class="at">y =</span> <span class="st">"Media ± SE"</span>, <span class="at">title =</span> <span class="st">"Comparación de medias por variable y genotipo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>Datos_plot <span class="ot">&lt;-</span> papa <span class="sc">%&gt;%</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(REPETICION, Alt_plant_45_días,Alt_plant_90_días,</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>         Número_tubérculos_por_planta,Peso_tubérculos_por_planta_kg)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir a formato largo</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>Datos_largo <span class="ot">&lt;-</span> Datos_plot <span class="sc">%&gt;%</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>REPETICION, </span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Variable"</span>, </span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Valor"</span>)</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular medias y error estándar por genotipo y variable</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> Datos_largo <span class="sc">%&gt;%</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(REPETICION, Variable) <span class="sc">%&gt;%</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Media =</span> <span class="fu">mean</span>(Valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD =</span> <span class="fu">sd</span>(Valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">N =</span> <span class="fu">n</span>(),</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">SE =</span> SD<span class="sc">/</span><span class="fu">sqrt</span>(N),</span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot con facetas para las 4 variables</span></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(resumen, <span class="fu">aes</span>(<span class="at">x =</span> REPETICION, <span class="at">y =</span> Media)) <span class="sc">+</span></span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Media <span class="sc">-</span> SE, <span class="at">ymax =</span> Media <span class="sc">+</span> SE), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
+<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Variable, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"REPETICION"</span>, <span class="at">y =</span> <span class="st">"Media ± SE"</span>, <span class="at">title =</span> <span class="st">"Comparación de medias por variable y genotipo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -418,10 +415,10 @@ Residuals   56  3.317 0.05922               </code></pre>
 <section id="selección-de-variables-y-variancias-para-cada-componente" class="level2">
 <h2 class="anchored" data-anchor-id="selección-de-variables-y-variancias-para-cada-componente">Selección de variables y variancias para cada componente</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>datos_pca <span class="ot">&lt;-</span> papa <span class="sc">%&gt;%</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Alt_plant_45_días, Alt_plant_90_días, Número_tubérculos_por_planta, Peso_tubérculos_por_planta_kg)</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>pca_res <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(datos_pca, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca_res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>datos_pca <span class="ot">&lt;-</span> papa <span class="sc">%&gt;%</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Alt_plant_45_días, Alt_plant_90_días, Número_tubérculos_por_planta, Peso_tubérculos_por_planta_kg)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>pca_res <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(datos_pca, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca_res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Importance of components:
                           PC1    PC2    PC3    PC4
@@ -434,17 +431,17 @@ Cumulative Proportion  0.3882 0.6750 0.9196 1.0000</code></pre>
 <section id="gráfico-con-variables-empleadas-y-unidades-experimentales-combinadas" class="level2">
 <h2 class="anchored" data-anchor-id="gráfico-con-variables-empleadas-y-unidades-experimentales-combinadas">Gráfico con variables empleadas y unidades experimentales combinadas:</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>papa <span class="ot">&lt;-</span> papa <span class="sc">%&gt;%</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, BLOQUE, <span class="st">"R"</span>, REPETICION))</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(pca_res,</span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> papa,</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">label =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">label.label =</span> <span class="st">"ID"</span>,</span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">colour =</span> <span class="st">"BLOQUE"</span>,</span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">loadings =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">loadings.label =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>papa <span class="ot">&lt;-</span> papa <span class="sc">%&gt;%</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="fu">paste0</span>(<span class="st">"B"</span>, BLOQUE, <span class="st">"R"</span>, REPETICION))</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(pca_res,</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> papa,</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">label =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">label.label =</span> <span class="st">"ID"</span>,</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">colour =</span> <span class="st">"BLOQUE"</span>,</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">loadings =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">loadings.label =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
 ℹ Please use tidy evaluation idioms with `aes()`.
@@ -464,43 +461,43 @@ Cumulative Proportion  0.3882 0.6750 0.9196 1.0000</code></pre>
 <section id="pca-para-cada-variable-y-cada-unidad-experimental-por-separado" class="level2">
 <h2 class="anchored" data-anchor-id="pca-para-cada-variable-y-cada-unidad-experimental-por-separado">PCA para cada variable y cada unidad experimental por separado:</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>loadings <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(pca_res<span class="sc">$</span>rotation[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>loadings<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">rownames</span>(loadings)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de flechas:</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>circle <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">cos</span>(theta), <span class="at">y =</span> <span class="fu">sin</span>(theta))</span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>GraficoA <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> circle, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> loadings, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">xend =</span> PC1, <span class="at">yend =</span> PC2),</span>
-<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.15</span>, <span class="st">"cm"</span>)), <span class="at">color =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
-<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> loadings, <span class="fu">aes</span>(<span class="at">x =</span> PC1, <span class="at">y =</span> PC2, <span class="at">label =</span> variable),</span>
-<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"brown"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, <span class="fu">round</span>(<span class="fu">summary</span>(pca_res)<span class="sc">$</span>importance[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%)"</span>)) <span class="sc">+</span></span>
-<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">paste0</span>(<span class="st">"PC2 ("</span>, <span class="fu">round</span>(<span class="fu">summary</span>(pca_res)<span class="sc">$</span>importance[<span class="dv">2</span>,<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%)"</span>)) <span class="sc">+</span></span>
-<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"A) PCA – Círculo de correlaciones"</span>) <span class="sc">+</span></span>
-<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
-<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraer coordenadas de los individuos "B x R":</span></span>
-<span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a>ind_coord <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(pca_res<span class="sc">$</span>x[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
-<span id="cb52-25"><a href="#cb52-25" aria-hidden="true" tabindex="-1"></a>ind_coord<span class="sc">$</span>ID <span class="ot">&lt;-</span> papa<span class="sc">$</span>ID</span>
-<span id="cb52-26"><a href="#cb52-26" aria-hidden="true" tabindex="-1"></a>ind_coord<span class="sc">$</span>BLOQUE <span class="ot">&lt;-</span> papa<span class="sc">$</span>BLOQUE</span>
-<span id="cb52-27"><a href="#cb52-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-28"><a href="#cb52-28" aria-hidden="true" tabindex="-1"></a>GraficoB <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ind_coord, <span class="fu">aes</span>(<span class="at">x =</span> PC1, <span class="at">y =</span> PC2, <span class="at">label =</span> ID, <span class="at">color =</span> <span class="fu">as.factor</span>(BLOQUE))) <span class="sc">+</span></span>
-<span id="cb52-29"><a href="#cb52-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb52-30"><a href="#cb52-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.3</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb52-31"><a href="#cb52-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, <span class="fu">round</span>(<span class="fu">summary</span>(pca_res)<span class="sc">$</span>importance[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%)"</span>)) <span class="sc">+</span></span>
-<span id="cb52-32"><a href="#cb52-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">paste0</span>(<span class="st">"PC2 ("</span>, <span class="fu">round</span>(<span class="fu">summary</span>(pca_res)<span class="sc">$</span>importance[<span class="dv">2</span>,<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%)"</span>)) <span class="sc">+</span></span>
-<span id="cb52-33"><a href="#cb52-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"B) PCA – Distribución de unidades experimentales (B x R)"</span>) <span class="sc">+</span></span>
-<span id="cb52-34"><a href="#cb52-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb52-35"><a href="#cb52-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Bloque"</span>))</span>
-<span id="cb52-36"><a href="#cb52-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-37"><a href="#cb52-37" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(GraficoA, GraficoB, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>loadings <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(pca_res<span class="sc">$</span>rotation[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>loadings<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">rownames</span>(loadings)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de flechas:</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>circle <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">cos</span>(theta), <span class="at">y =</span> <span class="fu">sin</span>(theta))</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>GraficoA <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> circle, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> loadings, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">xend =</span> PC1, <span class="at">yend =</span> PC2),</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.15</span>, <span class="st">"cm"</span>)), <span class="at">color =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> loadings, <span class="fu">aes</span>(<span class="at">x =</span> PC1, <span class="at">y =</span> PC2, <span class="at">label =</span> variable),</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"brown"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, <span class="fu">round</span>(<span class="fu">summary</span>(pca_res)<span class="sc">$</span>importance[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%)"</span>)) <span class="sc">+</span></span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">paste0</span>(<span class="st">"PC2 ("</span>, <span class="fu">round</span>(<span class="fu">summary</span>(pca_res)<span class="sc">$</span>importance[<span class="dv">2</span>,<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%)"</span>)) <span class="sc">+</span></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"A) PCA – Círculo de correlaciones"</span>) <span class="sc">+</span></span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraer coordenadas de los individuos "B x R":</span></span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>ind_coord <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(pca_res<span class="sc">$</span>x[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>ind_coord<span class="sc">$</span>ID <span class="ot">&lt;-</span> papa<span class="sc">$</span>ID</span>
+<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>ind_coord<span class="sc">$</span>BLOQUE <span class="ot">&lt;-</span> papa<span class="sc">$</span>BLOQUE</span>
+<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>GraficoB <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ind_coord, <span class="fu">aes</span>(<span class="at">x =</span> PC1, <span class="at">y =</span> PC2, <span class="at">label =</span> ID, <span class="at">color =</span> <span class="fu">as.factor</span>(BLOQUE))) <span class="sc">+</span></span>
+<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.3</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, <span class="fu">round</span>(<span class="fu">summary</span>(pca_res)<span class="sc">$</span>importance[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%)"</span>)) <span class="sc">+</span></span>
+<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">paste0</span>(<span class="st">"PC2 ("</span>, <span class="fu">round</span>(<span class="fu">summary</span>(pca_res)<span class="sc">$</span>importance[<span class="dv">2</span>,<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%)"</span>)) <span class="sc">+</span></span>
+<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"B) PCA – Distribución de unidades experimentales (B x R)"</span>) <span class="sc">+</span></span>
+<span id="cb51-34"><a href="#cb51-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb51-35"><a href="#cb51-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Bloque"</span>))</span>
+<span id="cb51-36"><a href="#cb51-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-37"><a href="#cb51-37" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(GraficoA, GraficoB, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
